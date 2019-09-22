@@ -11,9 +11,7 @@ export class NewsComponent implements OnInit {
     public articles: any[] = [];
     public search: string;
 
-    constructor(
-        private newsService: NewsService
-    ) {
+    constructor(private newsService: NewsService) {
 
     }
 
@@ -25,8 +23,8 @@ export class NewsComponent implements OnInit {
         // Dummy article for navigation purpose,
         // replace with newsService usage
 
-        this.articles.push({
-            title: 'dummy article'
+        this.newsService.topHeadlines(['bbc-news','the-verge'], '', 'en').subscribe((data) => {
+            this.articles = data.articles;
         });
     }
 

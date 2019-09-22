@@ -1,10 +1,24 @@
 <div class="content">
-    <div *ngFor="let article of articles">
-        <a routerLink="/article" [state]="article">{{ article.title }}</a>
-    </div>
-
+    
     <!-- Search mat input with debouncing and mat progress bar for loading -->
+    
+
     <!-- List of fetched articles as snippets per the provided designs -->
+    <div class="container card-container">
+        <div *ngFor="let article of articles" class="card mb-3 mt-4 ml-4 d-inline-flex border-0" style="width: 18rem;">
+            <a routerLink="/article" [state]="article">
+                <img class="card-img-top" [src]="article.urlToImage" alt="Card image cap">
+            </a>
+            <div class="card-body card-content">
+                <p class="publisher">{{article.author}} &nbsp; &nbsp;{{article.publishedAt | date: "MMM d,yyyy"}}</p>
+                <a routerLink="/article" [state]="article">
+                    <h5 class="card-title card-custom-header">{{article.title}}</h5>
+                </a>
+                <p class="card-text" style="font-size: 12px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">{{article.description}}</p>
+            </div>
+        </div>
+    </div>
+    
     <!-- No results indication -->
 
 </div>

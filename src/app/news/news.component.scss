@@ -1,0 +1,29 @@
+.card-container {
+    width: 75%; 
+    background-color: white;
+}
+
+.card-content {
+    position: relative; 
+    z-index: 20; 
+    margin-top: -20px; 
+    background-color: white; 
+    width: 90%;
+}
+
+a {
+    text-decoration: none; 
+    color: black;
+}
+
+.publisher {
+    font-size: 10px; 
+    text-transform: uppercase;
+}
+
+.card-custom-header {
+    text-overflow: ellipsis; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-transform: uppercase;
+}

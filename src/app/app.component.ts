@@ -11,6 +11,7 @@ import { slideInAnimation } from './animations';
       // slideInAnimation
     ]
 })
+
 export class AppComponent {
     public title = 'News';
     public article = false;
