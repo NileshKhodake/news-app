@@ -24,7 +24,8 @@
             </div>
         </div>
     </div>
-    
     <!-- No results indication -->
-
+    <div style="text-align:center;" class="container card-container" *ngIf="articles.length === 0">
+        <h5>No articles found for "{{search}}"</h5>
+    </div>
 </div>
