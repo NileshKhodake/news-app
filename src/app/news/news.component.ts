@@ -19,11 +19,15 @@ export class NewsComponent implements OnInit {
         this.fetchArticles();
     }
 
+    public filterHeadlines() {
+        this.fetchArticles(this.search);
+    }
+
     private fetchArticles(search?: string): void {
         // Dummy article for navigation purpose,
         // replace with newsService usage
 
-        this.newsService.topHeadlines(['bbc-news','the-verge'], '', 'en').subscribe((data) => {
+        this.newsService.topHeadlines([], search, 'en').subscribe((data) => {
             this.articles = data.articles;
         });
     }
