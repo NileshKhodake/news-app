@@ -1,31 +1,31 @@
-<div class="content">
-    
-    <div class="container card-container">
-        <!-- Search mat input with debouncing and mat progress bar for loading -->
-        <br>
-        <div class="ml-4">
-            <mat-form-field style="width: 18rem;">
-                <input matInput placeholder="Search" [(ngModel)]="search" (change)="filterHeadlines()">
-            </mat-form-field>
-        </div>
-        <!-- List of fetched articles as snippets per the provided designs -->
-        <div *ngFor="let article of articles" class="card mb-3 mt-4 ml-4 d-inline-flex border-0" style="width: 18rem;">
-            <a routerLink="/article" [state]="article">
-                <div class="image-container">
-                    <img class="card-img-top zoom" [src]="article.urlToImage ? article.urlToImage : '../../assets/images/placeholder.jpg'" alt="Card image cap">
-                </div>
-            </a>
-            <div class="card-body card-content">
-                <p class="publisher">{{article.author}} &nbsp; &nbsp;{{article.publishedAt | date: "MMM d,yyyy"}}</p>
-                <a routerLink="/article" [state]="article">
-                    <h5 class="card-title card-custom-header">{{article.title}}</h5>
-                </a>
-                <p class="card-text" style="font-size: 12px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">{{article.description}}</p>
+<div class="container card-container">
+    <!-- Search mat input with debouncing and mat progress bar for loading -->
+    <br>
+    <div class="ml-4">
+        <mat-form-field style="width: 18rem;">
+            <input matInput placeholder="Search" [(ngModel)]="search" (change)="filterHeadlines()">
+        </mat-form-field>
+    </div>
+    <!-- List of fetched articles as snippets per the provided designs -->
+    <div *ngFor="let article of articles" class="card mb-3 mt-4 ml-4 d-inline-flex border-0" style="width: 18rem;">
+        <a routerLink="/article" [state]="article">
+            <div class="image-container">
+                <img class="card-img-top zoom" [src]="article.urlToImage ? article.urlToImage : '../../assets/images/placeholder.jpg'" alt="Card image cap">
             </div>
+        </a>
+        <div class="card-body card-content">
+            <p class="publisher">
+                {{article.source.id}} &nbsp; &nbsp;
+                {{article.publishedAt | date: "MMM d,yyyy"}}
+            </p>
+            <a routerLink="/article" [state]="article">
+                <h5 class="card-title card-custom-header">{{article.title}}</h5>
+            </a>
+            <p class="card-text" style="font-size: 12px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">{{article.description}}</p>
         </div>
     </div>
-    <!-- No results indication -->
-    <div style="text-align:center;" class="container card-container" *ngIf="articles.length === 0">
-        <h5>No articles found for "{{search}}"</h5>
-    </div>
+</div>
+<!-- No results indication -->
+<div style="text-align:center;" class="container card-container" *ngIf="articles.length === 0">
+    <h5>No articles found for "{{search}}"</h5>
 </div>

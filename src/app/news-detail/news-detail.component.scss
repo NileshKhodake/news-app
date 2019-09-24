@@ -1,0 +1,65 @@
+.card-container {
+    display: flex;
+    width: 75%;
+    background-color: white;
+    justify-content: center;
+}
+
+.img-size {
+    height: auto; 
+    width: 50rem;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.purple-text {
+    color: purple;
+    font-weight: bold;
+}
+
+.font-10 {
+    font-size: 10px;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+.btn-read-more {
+    margin: auto; 
+    display: block; 
+    border-radius: 20px; 
+    font-size: 10px; 
+    height: 2rem; 
+    padding: 0px;
+}
+
+.table-content {
+    position: relative; 
+    z-index: 20; 
+    margin-top: -45px; 
+    background-color: white; 
+    width: 80%;
+    margin-right: 0px;
+}
+
+.avatar {
+    height:3rem; 
+    width: 3rem; 
+    border-radius: 50%;
+}
+
+.date {
+    float: right; 
+    font-size: 10px;
+}
+
+.article-title {
+    text-transform: uppercase;
+}
+
+.article-title:hover {
+    color: purple;
+}

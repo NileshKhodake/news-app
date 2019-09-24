@@ -1,5 +1,5 @@
 .card-container {
-    width: 75%; 
+    width: 75%;
     background-color: white;
 }
 
@@ -31,13 +31,13 @@ a {
 .zoom {
     transition: transform .1s ease;
     width:100%;
-  }
-  
-  .zoom:hover {
-    transform: scale(1.1);
-  }
+}
 
-  .image-container {
+.zoom:hover {
+    transform: scale(1.1);
+}
+
+.image-container {
     display: inline-block; 
     overflow: hidden;
-  }
+}

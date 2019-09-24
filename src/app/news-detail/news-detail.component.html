@@ -1,9 +1,76 @@
-<div class="content">
-    <div *ngIf="(article$ | async) as article">
-        {{ article.title }} details
-        <!-- Artile man image -->
+<div class="container card-container">
+    <div *ngIf="(article$ | async) as article" style="width: 50rem;">
+        
+        <!-- Article main image -->
+        <img class="img-size" 
+        [src]="article.urlToImage ? article.urlToImage : '../../assets/images/placeholder.jpg'" 
+        alt="Card image cap">
+        
         <!-- Artile title, description, metadata -->
-        <!-- Read more button -->
+        <div class="container table-content">
+            <div class="row">
+                <div class="col-3 pt-5 font-10">
+                    <div class="p-1 text-align-right">
+                        {{article.source && article.source.name}}
+                    </div>
+                    <div class="p-1 text-align-right">
+                        {{article.author}}
+                    </div>
+                    <div class="p-1 text-align-right">
+                        {{article.publishedAt | date: "MMM d,yyyy"}}
+                    </div>
+                    <div class="p-1 text-align-right purple-text">
+                        3 Comments
+                    </div>        
+                </div>
+                <div class="col-9 pt-2">
+                    <div class="article-title p-2">
+                        {{article.title}}
+                    </div>
+                    <div class="p-2 font-10">
+                        {{article.description}}
+                    </div>
+                    <div class="p-2 font-10">
+                        {{article.content}}
+                    </div>
+                    <!-- Read more button -->
+                    <div class="p-2">
+                        <button
+                        color="accent" 
+                        mat-raised-button 
+                        (click)="goToArticle(article.url)" 
+                        class="btn-read-more">Read more</button>
+                    </div>        
+                </div>
+            </div>
+        </div>
+       
         <!-- Comments section -->
+        <h2 class="font-20">3 Comments</h2>
+        <div class="container" *ngFor="let comment of comments">
+            <div class="row p-2">
+                <div class="col-1">
+                    <img 
+                    [src]="comment.avatar" 
+                    class="avatar">
+                </div>
+                <div class="col-11">
+                    <span class="p-2">
+                        {{comment.name}}
+                    </span>
+                    <span class="p-2 date">
+                        {{comment.date | date: "MMM d,yyyy"}}
+                    </span>
+                    <div class="p-2 font-10">
+                        {{comment.comment}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <hr>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -8,7 +8,7 @@ import { slideInAnimation } from './animations';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
     animations: [
-      // slideInAnimation
+      slideInAnimation
     ]
 })
 
@@ -16,7 +16,7 @@ export class AppComponent {
     public title = 'News';
     public article = false;
 
-    constructor(router: Router) {
+    constructor(private router: Router) {
         router.events.subscribe(() => {
             if (router.url.startsWith('/article')) {
                 this.article = true;
@@ -24,6 +24,10 @@ export class AppComponent {
                 this.article = false;
             }
         });
+    }
+
+    ngOnInit() {
+        this.router.navigate(['/news']);
     }
 
     public prepareRoute(outlet: RouterOutlet): any {

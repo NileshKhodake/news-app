@@ -61,6 +61,6 @@ export class NewsDetailComponent implements OnInit {
     }
 
     public goToArticle(url: string): void {
-        // Open original article in new tab
+        window.open(url);
     }
 }
