@@ -1,13 +1,11 @@
 .card-container {
-    display: flex;
     width: 75%;
     background-color: white;
-    justify-content: center;
 }
 
 .img-size {
     height: auto; 
-    width: 50rem;
+    width: 100%;
 }
 
 .text-align-right {
@@ -53,7 +51,6 @@
 
 .date {
     float: right; 
-    font-size: 10px;
 }
 
 .article-title {
